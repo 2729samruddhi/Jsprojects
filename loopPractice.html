@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Q1)
+        // let gameNum = 30;
+        // let guessNum = prompt("guess the game number");
+
+        // while(gameNum!=guessNum){
+        //     guessNum = prompt("incorrect guessing number,please eter again:")
+        // }
+        // console.log("congratulation you entered correct num:",guessNum);
+
+ // Q.2)
+        const num = [5,6,9,2,1];
+
+        let output = num.reduce((cur,res)=>{
+            return cur>res?cur:res;
+        })
+        console.log(output);
+
+        const marks = [85,90,96,85,94,87,67];
+
+        let high = marks.filter((value)=>{
+            return value >= 90;
+        })
+        console.log(high);
+
+// Q.4)
+
+let n = prompt("please enter number")
+let arr=[];
+   for(let i=1;i<=n;i++){
+      arr[i-1]=i;
+   }
+   console.log(arr);
+
+   let sum = arr.reduce((res,curr)=>{
+    return res+curr;
+   })
+
+   console.log("sum=",sum);
+
+   let product = arr.reduce((res,curr)=>{
+    return res*curr;
+   })
+
+   console.log("product=",product);
+   
+
+   
+        
+
+        
+        
+    </script>
+</body>
+</html>

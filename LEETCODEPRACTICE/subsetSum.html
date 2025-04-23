@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//  Q.1) Given an integer array nums, return true if you can partition the array into two subsets such that the sum of the elements in both subsets is equal or false otherwise.
+
+function canPartition(nums) {
+    // Calculate the total sum of the array
+    const totalSum = nums.reduce((sum, num) => sum + num, 0);
+    
+    console.log(`Total sum: ${totalSum}`);
+    
+    // If total sum is odd, we can't divide into two equal subsets
+    if (totalSum % 2 !== 0) {
+        console.log("Total sum is odd, can't partition equally");
+        return false;
+    }
+    
+    const target = totalSum / 2;
+    console.log(`Target sum for each subset: ${target}`);
+    
+    // dp[i] represents whether we can form a sum of i
+    const dp = new Array(target + 1).fill(false);
+    dp[0] = true;  // We can always form a sum of 0 (empty subset)
+    
+    console.log("Initial DP array:", dp);
+    
+    // For each number, update what sums we can make
+    for (const num of nums) {
+        console.log(`\nProcessing number: ${num}`);
+        // Go backwards to avoid using the same element multiple times
+        for (let i = target; i >= num; i--) {
+            dp[i] = dp[i] || dp[i - num];
+            if (dp[i]) {
+                console.log(`  Can now form sum ${i}`);
+            }
+        }
+        console.log("Updated DP array:", dp);
+    }
+    
+    console.log(`\nCan partition array equally? ${dp[target]}`);
+    return dp[target];
+}
+
+// Test with example 1
+console.log("EXAMPLE 1: [1,5,11,5]");
+canPartition([1,5,11,5]);
+
+// Test with example 2
+console.log("\n\nEXAMPLE 2: [1,2,3,5]");
+canPartition([1,2,3,5]);
+        
+    </script>
+</body>
+</html>
