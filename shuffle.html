@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>shuffle Array</h2>
+    <p id="demo"></p>
+</head>
+
+<body>
+    <script>
+        const shuffleArray = [1, 2, 3, 4, 5];
+        function shuffle(array) {
+            //it create shallow copy of original array
+            const result = array.slice();
+            //fisher-yates  shuffle algorithm
+            for (let i = result.length - 1; i > 0; i--) {   //Start from the end of the array (i = last index) and go backward to index 1
+                const j = Math.floor(Math.random() * (i + 1));  //math.random Multiply by (i + 1) and floor it to get a random integer index from 0 to i
+                [result[i], result[j]] = [result[j], result[i]];  //It randomizes the current element i with a random element j before it (or itself)
+            }
+            return result; 
+        }
+        const shuffled = shuffle(shuffleArray);  // call the function
+        console.log("Original:", shuffleArray);
+       console.log("Shuffled:", shuffled);
+       document.write(shuffled);
+           
+    </script>
+</body>
+
+</html>

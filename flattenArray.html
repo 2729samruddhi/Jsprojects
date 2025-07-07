@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flatten Nested Array</title>
+</head>
+<h1>The flat method</h1>
+<p id="demo"></p>
+<body>
+    <script>
+    // 1) using flat(Infinity) for deeply netsed 
+
+        function flatArray(){
+             const flattenArray = [1,[2,[3,4],5],6];
+             const flattenArray1 = [["a"],["b",["c","d"]],"e"]
+             console.log(flattenArray);
+             
+             const newArr = flattenArray.flat(Infinity);
+             const newArr1 = flattenArray1.flat(Infinity); 
+             console.log(newArr);
+             console.log(newArr1);
+             document.getElementById('demo').innerHTML = newArr.join(', ');
+             document.getElementById('demo').innerHTML = newArr1.join(', ');
+
+        }
+        flatArray();
+
+        //2)using recursive approach
+        const flattenArray = [1, [2, [3, 4], 5], 6];
+        const flattenArray1 = [["a"],["b",["c","d"]],"e"];
+
+        function flattenArr(arr) {
+            let result = [];
+
+            for (let item of arr) {
+                if (Array.isArray(item)) {
+                    result = result.concat(flattenArr(item));  
+                } else {
+                    result.push(item);
+                }
+            }
+
+            return result; 
+        }
+
+        const flattened = flattenArr(flattenArray);
+        const flattened1 = flattenArr(flattenArray1);
+        console.log(flattened);
+        console.log(flattened1);
+
+        document.getElementById('demo').innerHTML = flattened.join(', ');
+
+    </script>
+</body>
+</html>

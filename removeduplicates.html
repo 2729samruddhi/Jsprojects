@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>Remove duplicate from an Array</h2>
+</head>
+
+<body>
+    <script>
+        function removeDuplicates(arr) {
+            const seen = new Set();         //Set is a JavaScript object that only stores unique values.
+            return arr.filter(item => {     //filter() goes through the array one item at a time.
+                if (!seen.has(item)) {      
+                    seen.add(item);         //If it's not already in seen, we add it and keep it.
+                    return true;
+                }
+                return false;               //If it's already in seen, we skip it (i.e., filter it out).
+
+            });
+        }
+
+        const input1 = [1, 2, 2, 3, 4, 4]
+        console.log(removeDuplicates(input1));
+        document.write(removeDuplicates(input1),"<br>");
+
+        const input2 = ["a", "b", "a", "c"];
+         console.log(removeDuplicates(input2));
+        document.write(removeDuplicates(input2),"<br>");
+
+        const input3 = [1, "1", 1];
+        console.log(removeDuplicates(input3));
+        document.write(removeDuplicates(input3),"<br>");
+
+        const input4 = [];
+        console.log(removeDuplicates(input4));
+        document.write(removeDuplicates(input4),"<br>");
+ 
+        const input5 = [true, false, true];
+        console.log(removeDuplicates(input5));
+        document.write(removeDuplicates(input5),"<br>");
+
+    </script>
+</body>
+
+</html>

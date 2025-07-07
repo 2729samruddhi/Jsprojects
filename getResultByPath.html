@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>Get Result by path</h2>
+</head>
+
+<body>
+    <script>
+        function getResultByPath(path, obj) {
+            // Convert bracket notation to dot notation
+            const parts = path.replace(/\[(\d+)\]/g, '.$1').split('.');
+
+            // Traverse the object
+            let current = obj;
+            for (const part of parts) {
+                if (current === undefined || current === null) {
+                    return undefined;
+                }
+                current = current[part];
+            }
+
+            return current;
+        }
+
+        const obj = {
+            data: {
+                results: [
+                    { status: "completed" },
+                    {
+                        status: [
+                            { type: "done" },
+                            { type: "start" }
+                        ]
+                    }
+                ]
+            },
+            user: {
+                profile: {
+                    name: "Alice"
+                }
+            }
+        };
+
+        console.log(getResultByPath("data.results[0].status", obj)); // "completed"
+        console.log(getResultByPath("data.results[1].status[0].type", obj)); // "done"
+        console.log(getResultByPath("user.address.city", obj)); // undefined
+
+    </script>
+</body>
+
+</html>

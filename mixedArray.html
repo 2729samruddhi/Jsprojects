@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>Custom array</h2>
+</head>
+<body>
+    <script>
+        function mixedArray(arr){
+            const letters = arr.filter(item=>typeof item === 'string').sort();
+           const numbers = arr.filter(item=>typeof item === 'number').sort((a,b)=> a-b);  //By default, .sort() converts numbers to strings (which gives wrong order). so use (a,b)=>(a-b) to sort numerically
+           return [...letters, ...numbers];
+        }
+         const input = ["g", "s", 5, 2, "c", "e", 6, 1, "a"];
+         const input1 = [3,'z','b',10,'a',1,'d'];
+         const output = mixedArray(input);
+         document.write(output, "\n");
+         const output1 = mixedArray(input1);
+         document.write(output1);
+    </script>
+</body>
+</html>

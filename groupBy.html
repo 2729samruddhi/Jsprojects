@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>Group By</h2>
+</head>
+
+<body>
+    <script>
+        function groupBy(arr, property) {
+            debugger;
+            return arr.reduce((result, item) => {   //Use reduce() to build a grouped object.
+                const key = item[property];          // Get the value of the specified property
+                if (!result[key]) {
+                    result[key] = [];                  // Create an array for this key if it doesn't exist
+                }
+                result[key].push(item);              // Push the current item into the correct group
+                return result;
+            }, {});                                     
+        }
+
+        const users = [
+            { name: 'Alice', age: 25 },
+            { name: 'Bob', age: 30 },
+            { name: 'Charlie', age: 25 }
+        ];
+
+        console.log(groupBy(users, 'age'));
+        document.write(groupBy(users, 'age'));
+
+    </script>
+    <!-- For each object in the array:
+Extract the value of the given property.
+If the key doesn’t exist in the result object, initialize it as an empty array.
+Push the current object to the array under the correct key. -->
+
+    
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>Chunk Array</h2>
+</head>
+<body>
+    <script>
+        function chunkArr(arr,n){
+            const result = [];
+           for(let i = 0;i<arr.length; i+=n){
+            result.push(arr.slice(i,i+n));
+           }
+           return result;
+        }
+        const output1 = chunkArr([1, 2, 3], 5);
+        document.write(output1,"<br>");
+        console.log(output1);
+
+        const output2 = chunkArr([1, 2, 3,4, 5],2);
+        document.write(output2,"<br>");
+        console.log(output2);
+
+        const output3 = chunkArr([], 3);
+        document.write(output3,"<br>");
+        console.log(output3);
+
+        const output4 = chunkArr([1,2,3], 5);
+        document.write(output4,"<br>");
+        console.log(output4);
+        
+    </script>
+</body>
+</html>

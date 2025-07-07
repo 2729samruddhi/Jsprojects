@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>Sum</h2>
+</head>
+<body>
+    <script>
+        function sum(...args){
+          return args.reduce((acc,n)=>acc+n,0)   //acc=accumulator start from 0 and n  current no being added
+        }
+        document.write(sum(1,2,3),"<br>");
+        document.write(sum(10),"<br>");
+        document.write(sum(),"<br>");
+        document.write(sum(5,-5,20),"<br>");
+        document.write(sum(100,200,300,400),"<br>");
+
+    </script>
+</body>
+</html>

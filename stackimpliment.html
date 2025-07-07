@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>Impliment a stack</h2>
+</head>
+
+<body>
+    <script>
+        class Stack {
+            constructor() {
+                this.item = [];
+            }
+            //add element to the top
+            push(element) {
+                this.item.push(element);
+            }
+            //remove and return top element
+            pop() {
+                if (this.isEmpty()) {
+                    return null;
+                }
+                return this.item.pop();
+            }
+            //retun top element without removing it
+            peek() {
+                if (this.isEmpty()) {
+                    return null;
+                }
+                return this.item[this.item.length - 1]
+            }
+            //check if stack is empty
+            isEmpty() {
+                return this.item.length === 0;
+            }
+            //return no of elements
+            size() {
+                return this.item.length;
+            }
+            //remove all elements
+            clear() {
+                this.item = [];
+            }
+        }
+        const stack = new Stack();
+        document.writeln(stack.isEmpty(),"<br>");
+        console.log(stack.isEmpty());
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        document.write(stack.size(),"<br>");
+        document.write(stack.peek(),"<br>");
+        document.write(stack.pop(),"<br>");
+        document.write(stack.peek(),"<br>");
+        stack.clear();
+        document.write(stack.isEmpty());
+        
+
+        // console.log(stack.peek());    // 30
+        // console.log(stack.pop());     // 30
+        // console.log(stack.size());    // 2
+        // console.log(stack.isEmpty()); // false
+
+        // stack.clear();
+        // console.log(stack.isEmpty()); // true
+
+
+
+    </script>
+</body>
+
+</html>

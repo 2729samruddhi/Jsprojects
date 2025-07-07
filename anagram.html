@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>Anagram checker</h2>
+</head>
+<body>
+    <script>
+
+        function isAnagram(str1,str2){
+            const input1 = str1.replace(/[^a-zA-Z0-9]/g, '').toLowerCase(); 
+            const input2= str2.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+            
+            if(input1.length !== input2.length){
+                return false;
+            }
+
+            const char1 = input1.split('').sort().join('');
+            const char2 = input2.split('').sort().join('');
+
+            return char1 === char2;
+        }
+
+        document.write(isAnagram("listen", "silent"),"<br>");
+        console.log(isAnagram("listen", "silent"));
+        document.write(isAnagram("hello","world"),"<br>");
+        document.write(isAnagram("Triangle","Integral"),"<br>")
+        document.write(isAnagram("rat","car"),"<br>");
+        document.write(isAnagram("a","A"),"<br>");
+        document.write(isAnagram("dormitory !!", "dirty room"));
+        
+          
+    </script>
+</body>
+</html>

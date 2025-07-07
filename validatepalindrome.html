@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>Validate palindrome</h2>
+</head>
+
+<body>
+    <script>
+        function validatePalindrome(str) {
+            //    let j = str.length-1;
+            //    for(let i=0; i< j/2; i++){
+            //     let x= str[i];
+            //     let y = str[j-i];
+            //     if(x!= y){
+            //         return false;
+            //     }  
+            //    } 
+            //     return true;
+            
+            // Remove all non-alphanumeric characters and convert to lowercase
+            const cleaned= str.replace(/[^a-z0-9]/gi,'').toLowerCase();
+
+            // Compare the cleaned string with its reverse
+            return cleaned === cleaned.split('').reverse().join('');
+        }
+        document.write(validatePalindrome("a man, a plan, a canal: panama"), "<br>");
+        document.write(validatePalindrome("race a car"), "<br>");
+        document.write(validatePalindrome(""), "<br>");
+        document.write(validatePalindrome("1234"), "<br>");
+        document.write(validatePalindrome("!!!@@@###"), "<br>")
+
+    </script>
+
+</body>
+
+</html>
