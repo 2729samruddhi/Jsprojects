@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>map,reduce, filter mathods</h2>
+</head>
+
+<body>
+    <script>
+        const users = [
+            {firstName:"samruddhi", lastName:"patil", age:24},
+            {firstName:"elena",lastName:"gilbert",age:17},
+            {firstName:"demon",lastName:"salvtore",age:30},
+            {firstName:"stefen",lastName:"salvtore",age:24}
+        ]
+
+        const output = users.reduce(function(acc,curr){
+            if(acc[curr.age]){
+               acc[curr.age] = ++acc[curr.age];
+            }else{
+                acc[curr.age] = 1;
+            }
+              return acc;
+        },{})
+        console.log(output);
+        
+
+    </script>
+</body>
+
+</html>
