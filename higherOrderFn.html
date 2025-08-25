@@ -1,35 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <h2>Higher-order functions</h2>
 </head>
+
 <body>
     <script>
-    const radius = [3,1,2,4];
-    const area = function(radius){
-        return Math.PI*radius * radius;
-    }
-    
-    const circumference = function(radius){
-        return 2 * Math.PI * radius;
-    }
-    const diameter = function(radius){
-        return 2 * radius;
-    }
-     
-    const calculate= function(radius,logic){
-        const output = [];
-        for(let i=0 ;i<radius.length; i++){
-            output.push(logic(radius[i]))
+        const radius = [3, 1, 2, 4];
+        const area = function (radius) {
+            return Math.PI * radius * radius;
         }
-        return output;
-    }
-       console.log(calculate(radius,area));
-       console.log(calculate(radius,circumference));
-       console.log(calculate(radius,diameter));
+
+        const circumference = function (radius) {
+            return 2 * Math.PI * radius;
+        }
+        const diameter = function (radius) {
+            return 2 * radius;
+        }
+
+        const calculate = function (radius, logic) {
+            const output = [];
+            for (let i = 0; i < radius.length; i++) {
+                output.push(logic(radius[i]))
+            }
+            return output;
+        }
+        //If you're asked how this could be improved using built-in array methods, you could mention:
+        //const calculate = (radius, logic) => radius.map(logic);
+
+        console.log(calculate(radius, area));
+        console.log(calculate(radius, circumference));
+        console.log(calculate(radius, diameter));
+
+        
+
+        // const radius = [3, 1, 2, 4];
+
+        // // 1️⃣ Area
+        // const areas = [];
+        // for (let i = 0; i < radius.length; i++) {
+        //     areas.push(Math.PI * radius[i] * radius[i]);
+        // }
+        // console.log(areas); // [28.274..., 3.1415..., 12.566..., 50.265...]
+
+        // // 2️⃣ Circumference
+        // const circumferences = [];
+        // for (let i = 0; i < radius.length; i++) {
+        //     circumferences.push(2 * Math.PI * radius[i]);
+        // }
+        // console.log(circumferences); // [18.849..., 6.283..., 12.566..., 25.132...]
+
+        // // 3️⃣ Diameter
+        // const diameters = [];
+        // for (let i = 0; i < radius.length; i++) {
+        //     diameters.push(2 * radius[i]);
+        // }
+        // console.log(diameters); // [6, 2, 4, 8]
+
     </script>
 </body>
+
 </html>

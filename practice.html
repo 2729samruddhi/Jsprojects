@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>scope in JS</h2>
+</head>
+
+<body>
+    <script>
+        // --------------------1) scope of variable------------------
+        // var globalFun = "global variable";
+        // function funScope() {
+        //     let funvariable = "samruddhi";
+        //     console.log(funvariable);
+
+        //     if (true) {
+        //         let blockScope = "block scope";
+        //         var blockScope1 = "block scope as a function variable"
+        //         console.log(blockScope);
+
+        //     }
+        //     console.log(blockScope1);
+        //     console.log(blockScope);
+
+        // }
+        // funScope();
+        // console.log(funvariable);
+
+
+        //------------------- 2)Hoisting------------------------------
+        //    x();
+         
+        // function x(){
+        //     console.log("hello"); 
+        // }
+
+        // x= 20;
+        // console.log(x);
+        // var x;
+
+        // -------------3)variables and let,var,const--------------
+
+        function testVar(){
+            //var has function scope
+            if(true){
+                var x = 10;
+            }
+            console.log(x);
+            
+        }
+        testVar();
+
+        function testLet(){
+            //let has block scope
+            if(true){
+                let y =25; 
+            }
+           // console.log(y);   //error: reference error: "y is not defined"
+        }
+        testLet();
+
+        function testConst(){
+            if(true){
+                const z= 40;
+               // z= 30;    //error:typeerror:"assignment to constat variable"
+            }
+        }
+        testConst();
+
+         //  const with object (can mutate internal values)
+        const user = {
+            name:"sam"
+        }
+         user.name = "samruddhi";
+         console.log(user.name);
+
+         //REDECLARATION
+         //var can reassign and redeclare also
+         var a=1;
+         var a= 5;
+         console.log(a);
+
+         //can be reassign but not redeclare
+         let b= 20;
+          b=30;
+          console.log(b);
+          
+          //can not redeclare and reassign
+          const c= 45;
+           c = 25
+         
+         
+
+
+    </script>
+
+</body>
+
+</html>
