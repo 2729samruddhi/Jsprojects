@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Of Three</title>
+</head>
+<body>
+      
+    <script>
+        var isPowerOfThree = function(n) {
+    if (n <= 0) return false;   // powers of 3 are positive only
+    while (n % 3 === 0) {
+        n /= 3;
+    }
+    return n === 1;
+};
+    console.log(isPowerOfThree(1));  // true (3^0)
+  console.log(isPowerOfThree(9));  // true (3^2)
+console.log(isPowerOfThree(10)); // false
+console.log(isPowerOfThree(0));  // false
+
+    </script>
+</body>
+</html>
