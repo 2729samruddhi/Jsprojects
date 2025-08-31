@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var generateFibonacci = function (n) {
+        if (n <= 0) return []; // return empty array for n <= 0
+        if (n === 1) return [0]; // base case for n = 1
+
+        let fib = [0, 1]; // starting values F(0) = 0, F(1) = 1
+
+        for (let i = 2; i < n; i++) {
+          fib.push(fib[i - 1] + fib[i - 2]); // next = sum of previous 2
+        }
+
+        return fib;
+      };
+      console.log(generateFibonacci(5)); // [0, 1, 1, 2, 3]
+      console.log(generateFibonacci(8)); // [0, 1, 1, 2, 3, 5, 8, 13]
+      console.log(generateFibonacci(1)); // [0]
+      console.log(generateFibonacci(0)); // []
+    </script>
+  </body>
+</html>
