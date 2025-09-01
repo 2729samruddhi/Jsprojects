@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>search roated array</title>
+  </head>
+  <body>
+    <script>
+      function searchRotatedArray(nums, target) {
+        let left = 0,
+          right = nums.length - 1;
+
+        while (left <= right) {
+          let mid = Math.floor((left + right) / 2);
+
+          // If found at mid
+          if (nums[mid] === target) return mid;
+
+          // Check if left half is sorted
+          if (nums[left] <= nums[mid]) {
+            if (nums[left] <= target && target < nums[mid]) {
+              right = mid - 1; // Search in left half
+            } else {
+              left = mid + 1; // Search in right half
+            }
+          }
+          // Else right half is sorted
+          else {
+            if (nums[mid] < target && target <= nums[right]) {
+              left = mid + 1; // Search in right half
+            } else {
+              right = mid - 1; // Search in left half
+            }
+          }
+        }
+
+        return -1; // Not found
+      }
+
+      // Example tests
+      console.log(searchRotatedArray([4, 5, 6, 7, 0, 1, 2], 0)); // ➝ 4
+      console.log(searchRotatedArray([4, 5, 6, 7, 0, 1, 2], 3)); // ➝ -1
+      console.log(searchRotatedArray([1], 0)); // ➝ -1
+    </script>
+  </body>
+</html>
