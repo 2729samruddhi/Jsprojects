@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>reverse words in string</title>
+  </head>
+  <body>
+    <script>
+      function reverseWords(s) {
+        // Step 1: Trim spaces
+        s = s.trim();
+
+        // Step 2: Split by spaces (handle multiple spaces with regex)
+        let words = s.split(/\s+/);
+
+        // Step 3: Reverse the array
+        words.reverse();
+
+        // Step 4: Join with single space
+        return words.join(" ");
+      }
+
+      // Example tests
+      console.log(reverseWords("the sky is blue")); // ➝ "blue is sky the"
+      console.log(reverseWords("  hello world  ")); // ➝ "world hello"
+      console.log(reverseWords("a good   example")); // ➝ "example good a"
+      console.log(reverseWords("    ")); // ➝ "" (empty string)
+      console.log(reverseWords("word")); // ➝ "word"
+    </script>
+  </body>
+</html>
