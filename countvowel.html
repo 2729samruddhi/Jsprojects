@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count vowel</title>
+</head>
+<body>
+    <script>
+        function countVowels(str) {
+  const vowels = new Set(['a', 'e', 'i', 'o', 'u']); // lowercase vowels
+  let count = 0;
+
+  for (let char of str.toLowerCase()) {
+    if (vowels.has(char)) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+// Example Usage:
+console.log(countVowels("hello"));      // 2 (e, o)
+console.log(countVowels("JavaScript")); // 3 (a, a, i)
+console.log(countVowels("bcd"));        // 0
+console.log(countVowels("AEIOU"));      // 5
+console.log(countVowels(""));           // 0
+
+    </script>
+</body>
+</html>
