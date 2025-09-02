@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function curry(fn) {
+  return function curried(...args) {
+    // If enough arguments are passed, call the function
+    if (args.length >= fn.length) {
+      return fn(...args);
+    } else {
+      // Otherwise, return a function waiting for more args
+      return function (...nextArgs) {
+        return curried(...args, ...nextArgs);
+      };
+    }
+  };
+}
+
+// Example usage:
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+const curriedSum = curry(sum);
+
+console.log(curriedSum(1)(2)(3));   // 6
+console.log(curriedSum(1, 2)(3));   // 6
+console.log(curriedSum(1)(2, 3));   // 6
+console.log(curriedSum(1, 2, 3));   // 6
+
+    </script>
+</body>
+</html>
