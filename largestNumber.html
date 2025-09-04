@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>largest number formed</title>
+  </head>
+  <body>
+    <script>
+      function largestNumber(nums) {
+        // Convert all numbers to strings
+        nums = nums.map(String);
+
+        // Sort using custom comparator
+        nums.sort((a, b) => (b + a).localeCompare(a + b));
+
+        // Edge case: if the largest number is "0", return "0"
+        if (nums[0] === "0") return "0";
+
+        // Join and return the result
+        return nums.join("");
+      }
+
+      // Example 1
+      console.log(largestNumber([3, 30, 34, 5, 9])); // "9534330"
+
+      // Example 2
+      console.log(largestNumber([54, 546, 548, 60])); // "6054854654"
+
+      // Example 3 (edge case)
+      console.log(largestNumber([0, 0])); // "0"
+    </script>
+  </body>
+</html>
