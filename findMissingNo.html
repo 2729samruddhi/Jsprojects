@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find missing number</title>
+</head>
+<body>
+    <script>
+        function missingNumber(nums) {
+    // The expected sum of numbers from 0 to n
+    const n = nums.length;
+    const expectedSum = (n * (n + 1)) / 2;
+
+    // Actual sum of given array
+    const actualSum = nums.reduce((acc, num) => acc + num, 0);
+
+    // Missing number = expected - actual
+    return expectedSum - actualSum;
+}
+
+// Example 1
+console.log(missingNumber([3, 0, 1])); // Output: 2
+
+// Example 2
+console.log(missingNumber([0, 1])); // Output: 2
+
+// Example 3
+console.log(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1])); // Output: 8
+
+// Example 4
+console.log(missingNumber([0])); // Output: 1
+
+    </script>
+</body>
+</html>
