@@ -61,6 +61,23 @@
         // }
         // console.log(diameters); // [6, 2, 4, 8]
 
+        const array = [2,4,6]
+
+        const area1 = function(radius){
+            return Math.PI * radius* radius
+        }
+
+        const calculates =  function(radius,logic){
+          const out = [];
+          for(let i=0;i<radius.length;i++){
+            out.push(logic(radius[i]))
+          }
+          return out
+        }
+
+        console.log(calculates(radius,area1));
+        
+
     </script>
 </body>
 
