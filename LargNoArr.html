@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //write a function that returns largest number in an array
+        function LargeNo(arr){
+            let largest = arr[0];
+            for(let i=1;i<arr.length;i++){
+                if(arr[i]>largest){
+                    largest = arr[i];
+                }
+            }
+            return largest;
+        }
+        const arr = [4,77,-4,56,3,28];
+        let result = LargeNo(arr);
+        console.log(result);
+    </script>
+</body>
+</html>
