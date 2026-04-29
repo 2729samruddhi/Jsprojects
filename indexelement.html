@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //-------------access index of ele in arr while iteration
+        const arr = ["a","c","f","g"]
+        //--------using  foreach---------
+        arr.forEach((ele,i)=>{
+            console.log(i,ele);
+            document.write(i,ele)
+            })
+
+        //---------using map--------
+            arr.map((ele,i)=>{
+                console.log(i,ele);
+         }) 
+
+         //usiing for..of
+         for(let array of arr){
+            console.log(array);
+              }
+              //for..of method only shows element not index
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switch Case Example</title>
+</head>
+<body>
+  <h1>JavaScript switch case example</h1>
+  <p id="result"></p>
+
+
+  <script>
+    const day = new Date().getDay();
+    let text;
+    switch (day){
+        case 0:day
+        text = "sunday"
+        break;
+        case 1:day
+        text = "monday"
+        break;
+        case 2:day
+        text = "tuesday"
+        break;
+        case 3:day
+        text = "wednesaday"
+        break;
+        case 4:day
+        text = "thursday"
+        break;
+        case 5:day
+        text = "friday"
+        break;
+        case 6:day
+        text = "saturday"
+        break;
+        case 7:day
+        text = "sunday"
+        break;
+    }
+    document.getElementById("result").textContent = text;
+  </script>
+</body>
+</html>

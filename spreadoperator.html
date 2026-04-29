@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //-------------spread operator----------------
+        //-----copying arr------
+        const arr1 = [1,2,3]
+        const arr2 = [...arr1,4,5]
+        console.log(arr2)
+
+        //-----merging arr-----
+        const arr3 = [6,8,9]
+        console.log([...arr1,...arr3])
+        //-----copying obj------
+        const obj1 ={a:1,b:2}
+        const obj2={...obj1}
+        console.log(obj2)
+        //-----merging obj------
+        const obj3={c:3,d:4}
+        console.log({...obj1,...obj3})
+        //---Passing array elements as function arguments---
+        const sum =(x,y,z)=>x+y+z;
+        const numbers=[3,6,8];
+        console.log(sum(...numbers))
+    </script>
+</body>
+</html>
